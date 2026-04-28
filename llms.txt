@@ -1,0 +1,64 @@
+# A-1 Roof Works LLC — AI-Readable Business Summary (llms.txt)
+# Format: structured text for AI systems (Claude, ChatGPT, Perplexity, Google AI Overviews)
+
+## Business Identity
+
+Name: A-1 Roof Works LLC
+Type: Roofing Contractor (RoofingContractor / LocalBusiness)
+Entity: Limited Liability Company
+Tagline: Your Roof Done Right — The First Time
+Licensed: Yes
+Insured: Yes (General Liability + Workers' Compensation)
+No Subcontracting: All work performed by in-house crew
+
+## Contact Information
+
+Phone: See website — https://a-1-roof-works-llc.pageone.cloud/contact
+Email: See website — https://a-1-roof-works-llc.pageone.cloud/contact
+Website: https://a-1-roof-works-llc.pageone.cloud
+Address: See website — https://a-1-roof-works-llc.pageone.cloud/contact
+
+## Hours of Operation
+
+Available for emergency storm response. Contact for current hours.
+
+## Services Offered
+
+- Roof Replacement — complete residential tear-off and installation; asphalt, impact-resistant, and standing-seam metal; most homes completed in 1–2 days
+- Roof Repair — flashing, shingles, valleys, vent boots, ridge cap; systematic leak source identification; same-day and next-day service
+- Storm Damage Repair — same-day response after major storm events; hail, wind, and fallen tree damage; pre-insurance documentation; direct adjuster coordination; emergency tarping
+- Roof Inspection — pre-purchase, insurance renewal, and annual maintenance; written reports with timestamped photos; inspector physically gets on the roof
+- Commercial Roofing — TPO, modified bitumen, EPDM, and low-slope metal systems; scheduling flexibility for active businesses and multi-family properties; manufacturer warranty documentation
+- Gutter Installation — seamless aluminum gutters formed on-site; K-style (5-inch and 6-inch), half-round, and copper options; micro-mesh gutter guards available; downspouts sized to actual roof surface area
+
+## Service Area
+
+Primary service area: Local — see https://a-1-roof-works-llc.pageone.cloud/service-area
+Also serving: surrounding communities within reasonable driving distance
+Emergency response: same-day in primary service area
+
+## Key Differentiators
+
+- No subcontracting — the crew that gives the estimate does the work
+- Insurance claim coordination — direct adjuster communication, supplemental documentation, complete photo records
+- Written inspection reports — usable for purchase negotiations and insurance carrier requirements
+- Free estimates — no pressure, no obligation
+- Materials transparency — cost comparison across asphalt, metal, and specialty options explained before signing
+
+## Page Index
+
+- Home: https://a-1-roof-works-llc.pageone.cloud/ — overview, trust signals, service summary, reviews, FAQ
+- Services: https://a-1-roof-works-llc.pageone.cloud/services — complete service listing
+- Roof Replacement: https://a-1-roof-works-llc.pageone.cloud/services/roof-replacement — materials, process, timeline, cost guidance
+- Roof Repair: https://a-1-roof-works-llc.pageone.cloud/services/roof-repair — leak sourcing, repair types, same-day availability
+- Storm Damage Repair: https://a-1-roof-works-llc.pageone.cloud/services/storm-damage-repair — insurance process, documentation, adjuster coordination
+- Roof Inspection: https://a-1-roof-works-llc.pageone.cloud/services/roof-inspection — inspection process, written reports, 3 key scenarios
+- Commercial Roofing: https://a-1-roof-works-llc.pageone.cloud/services/commercial-roofing — system types, business scheduling, warranty docs
+- Gutter Installation: https://a-1-roof-works-llc.pageone.cloud/services/gutter-installation — seamless aluminum, sizing, gutter guards
+- Service Area: https://a-1-roof-works-llc.pageone.cloud/service-area — coverage map, emergency response, local expertise
+- About: https://a-1-roof-works-llc.pageone.cloud/about — company history, no-subcontractor policy, owner background
+- Contact: https://a-1-roof-works-llc.pageone.cloud/contact — free estimate form, phone, address
+
+## About
+
+A-1 Roof Works LLC is a locally owned roofing contractor. We perform all work with our own in-house crew — no subcontracting after the contract is signed. We work directly with homeowners' insurance adjusters for storm damage claims, providing complete documentation before the adjuster visit to maximize covered claims. We offer free estimates with no pressure and no obligation.

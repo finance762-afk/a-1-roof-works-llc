@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap-images.xml — A-1 Roof Works LLC
+  Updated: April 2026
+  Staging domain: https://a-1-roof-works-llc.pageone.cloud — update before go-live
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ═══ Homepage ═══════════════════════════════════════════════════════════ -->
+
+  <url>
+    <loc>https://a-1-roof-works-llc.pageone.cloud/</loc>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/hero-home.png</image:loc>
+      <image:title>A-1 Roof Works LLC — Residential Roofing Hero</image:title>
+      <image:caption>A-1 Roof Works LLC roofing crew completing a residential roof replacement</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-003.jpg</image:loc>
+      <image:title>Roofing Crew — Mid-Project Roof Repair</image:title>
+      <image:caption>Roofing crew performing mid-project roof repair with exposed shingles and gutter cleaning visible on residential home</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-021.jpg</image:loc>
+      <image:title>Installed Architectural Asphalt Shingles</image:title>
+      <image:caption>Close-up of installed architectural asphalt shingles in gray and charcoal colors with professional diamond pattern layout</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-005.jpg</image:loc>
+      <image:title>New Asphalt Shingle Roof Installation</image:title>
+      <image:caption>New asphalt shingle roof installation with ridge vent and gutter system on residential home</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-011.jpg</image:loc>
+      <image:title>Roofer Installing Asphalt Shingles</image:title>
+      <image:caption>Roofer installing asphalt shingles during active roof repair work with professional tools</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-028.jpg</image:loc>
+      <image:title>Roofing Crew Installing New Shingles</image:title>
+      <image:caption>Roofing crew actively installing new shingles on residential roof with ridge vent and removal of old materials</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ═══ Roof Replacement ════════════════════════════════════════════════════ -->
+
+  <url>
+    <loc>https://a-1-roof-works-llc.pageone.cloud/services/roof-replacement</loc>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/roof-replacement-hero.png</image:loc>
+      <image:title>Roof Replacement — A-1 Roof Works LLC</image:title>
+      <image:caption>Complete residential tear-off and new asphalt shingle roof installation by A-1 Roof Works LLC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-003.jpg</image:loc>
+      <image:title>Roofing Crew Mid-Project Roof Repair</image:title>
+      <image:caption>Roofing crew performing mid-project roof repair with exposed shingles and gutter cleaning visible on residential home</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-004.jpg</image:loc>
+      <image:title>Residential Roof Repair — Exposed Decking</image:title>
+      <image:caption>Residential roof repair in progress showing removed shingles and exposed roof decking with asphalt shingles partially installed</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-005.jpg</image:loc>
+      <image:title>New Asphalt Shingle Roof with Ridge Vent</image:title>
+      <image:caption>New asphalt shingle roof installation with ridge vent and gutter system on residential home</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ═══ Roof Repair ══════════════════════════════════════════════════════════ -->
+
+  <url>
+    <loc>https://a-1-roof-works-llc.pageone.cloud/services/roof-repair</loc>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/roof-repair-hero.png</image:loc>
+      <image:title>Roof Repair Services — A-1 Roof Works LLC</image:title>
+      <image:caption>Professional roof repair — flashing, shingles, valleys, and vent boots by A-1 Roof Works LLC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-001.jpg</image:loc>
+      <image:title>Asphalt Shingle Roof Flashing Detail</image:title>
+      <image:caption>Close-up of asphalt shingle roof with black flashing and drip edge detail showing installation quality</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-006.jpg</image:loc>
+      <image:title>Chimney Flashing Installation</image:title>
+      <image:caption>Roofer installing new chimney flashing on residential asphalt shingle roof with tools visible</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-008.jpg</image:loc>
+      <image:title>Residential Roof Repair in Progress</image:title>
+      <image:caption>Residential roof repair in progress with work truck and materials on asphalt shingle roof</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ═══ Storm Damage Repair ═════════════════════════════════════════════════ -->
+
+  <url>
+    <loc>https://a-1-roof-works-llc.pageone.cloud/services/storm-damage-repair</loc>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/storm-damage-hero.png</image:loc>
+      <image:title>Storm Damage Roof Repair — A-1 Roof Works LLC</image:title>
+      <image:caption>Hail and wind storm damage roof inspection and repair by A-1 Roof Works LLC</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-031.jpg</image:loc>
+      <image:title>Aerial View — Residential Roof Installation</image:title>
+      <image:caption>Aerial view of roofers installing new shingles on residential roof with debris removal truck on lawn</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-028.jpg</image:loc>
+      <image:title>Roofing Crew Installing New Shingles</image:title>
+      <image:caption>Roofing crew actively installing new shingles on residential roof with ridge vent and removal of old materials</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-033.jpg</image:loc>
+      <image:title>Plywood Substrate and Roofing Material Installation</image:title>
+      <image:caption>Residential roof repair in progress showing plywood substrate and black roofing material installation work</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ═══ Roof Inspection ══════════════════════════════════════════════════════ -->
+
+  <url>
+    <loc>https://a-1-roof-works-llc.pageone.cloud/services/roof-inspection</loc>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/roof-inspection-hero.png</image:loc>
+      <image:title>Roof Inspection Services — A-1 Roof Works LLC</image:title>
+      <image:caption>Thorough roof inspection with written report — pre-purchase, insurance renewal, and annual maintenance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-002.jpg</image:loc>
+      <image:title>Roof Inspection Measurement Tools</image:title>
+      <image:caption>Roof inspection measurement on asphalt shingle roof with white PVC pipe and measurement tools</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-011.jpg</image:loc>
+      <image:title>Roofer Installing Shingles — Professional Tools</image:title>
+      <image:caption>Roofer installing asphalt shingles during active roof repair work with professional tools</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ═══ Commercial Roofing ═══════════════════════════════════════════════════ -->
+
+  <url>
+    <loc>https://a-1-roof-works-llc.pageone.cloud/services/commercial-roofing</loc>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/commercial-roofing-hero.png</image:loc>
+      <image:title>Commercial Roofing — A-1 Roof Works LLC</image:title>
+      <image:caption>Commercial flat and low-slope roofing — TPO, modified bitumen, EPDM, and metal systems</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-003.jpg</image:loc>
+      <image:title>Commercial Roofing Crew at Work</image:title>
+      <image:caption>Roofing crew performing mid-project roof repair with exposed shingles visible</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-005.jpg</image:loc>
+      <image:title>New Roof Installation with Ridge Vent</image:title>
+      <image:caption>New asphalt shingle roof installation with ridge vent and gutter system on residential home</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ═══ Gutter Installation ══════════════════════════════════════════════════ -->
+
+  <url>
+    <loc>https://a-1-roof-works-llc.pageone.cloud/services/gutter-installation</loc>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/gutter-installation-hero.png</image:loc>
+      <image:title>Gutter Installation — A-1 Roof Works LLC</image:title>
+      <image:caption>Seamless aluminum gutter installation formed on-site with hidden hangers and correct pitch</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-058.jpg</image:loc>
+      <image:title>Roof with Gutter Guard Installation</image:title>
+      <image:caption>Roofer installing asphalt shingles on residential roof with protective gutter guard visible</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-004.jpg</image:loc>
+      <image:title>Gutter and Roof Repair in Progress</image:title>
+      <image:caption>Residential roof repair in progress showing removed shingles and exposed roof decking with asphalt shingles partially installed</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ═══ About ════════════════════════════════════════════════════════════════ -->
+
+  <url>
+    <loc>https://a-1-roof-works-llc.pageone.cloud/about</loc>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/about-hero.png</image:loc>
+      <image:title>About A-1 Roof Works LLC</image:title>
+      <image:caption>A-1 Roof Works LLC — locally owned and operated roofing contractor</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-001.jpg</image:loc>
+      <image:title>Asphalt Shingle Roof Quality Detail</image:title>
+      <image:caption>Close-up of asphalt shingle roof with black flashing and drip edge detail showing installation quality</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-008.jpg</image:loc>
+      <image:title>A-1 Roof Works Crew On-Site</image:title>
+      <image:caption>Residential roof repair in progress with work truck and materials on asphalt shingle roof</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ═══ Service Area ══════════════════════════════════════════════════════════ -->
+
+  <url>
+    <loc>https://a-1-roof-works-llc.pageone.cloud/service-area</loc>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/service-area-hero.png</image:loc>
+      <image:title>A-1 Roof Works LLC Service Area</image:title>
+      <image:caption>Roofing services available across the local service area and surrounding communities</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-025.jpg</image:loc>
+      <image:title>Aerial View of Roof Installation</image:title>
+      <image:caption>Aerial view of asphalt shingle roof installation in progress with work vehicles and materials on residential driveway</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://a-1-roof-works-llc.pageone.cloud/assets/images/photo-007.jpg</image:loc>
+      <image:title>Residential Home with Asphalt Shingle Roof</image:title>
+      <image:caption>Single-story residential home with gray siding and pitched roof, surrounded by bare trees and landscaping</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

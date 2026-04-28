@@ -1,0 +1,21 @@
+# robots.txt — A-1 Roof Works LLC
+# IMPORTANT: Replace https://a-1-roof-works-llc.pageone.cloud with the live domain once confirmed
+
+User-agent: *
+Allow: /
+
+# Block server-side includes and JS source files from crawling
+Disallow: /includes/
+Disallow: /assets/js/
+
+# Allow crawlers to reach CSS and images (needed for rendering score)
+Allow: /assets/css/
+Allow: /assets/images/
+
+# Block utility pages
+Disallow: /thank-you
+Disallow: /thank-you.php
+
+# Sitemaps
+Sitemap: https://a-1-roof-works-llc.pageone.cloud/sitemap.xml
+Sitemap: https://a-1-roof-works-llc.pageone.cloud/sitemap-images.xml

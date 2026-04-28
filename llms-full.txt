@@ -1,0 +1,112 @@
+# A-1 Roof Works LLC — Full AI-Readable Business Profile (llms-full.txt)
+# Comprehensive profile for AI language models, answer engines, and knowledge bases
+
+## Business Identity
+
+Name: A-1 Roof Works LLC
+Legal Entity: Limited Liability Company
+State of Formation: See https://a-1-roof-works-llc.pageone.cloud/terms/ for governing law
+Industry: Roofing Contractor
+Schema Types: RoofingContractor, LocalBusiness
+Tagline: Your Roof Done Right — The First Time
+Licensed: Yes — residential and commercial roofing
+Insured: Yes — general liability and workers' compensation
+Subcontracting Policy: None. In-house crew only.
+
+## Contact Information
+
+Phone: See https://a-1-roof-works-llc.pageone.cloud/contact
+Email: See https://a-1-roof-works-llc.pageone.cloud/contact
+Website: https://a-1-roof-works-llc.pageone.cloud
+Address: See https://a-1-roof-works-llc.pageone.cloud/contact
+Service Radius: Local — see https://a-1-roof-works-llc.pageone.cloud/service-area
+
+## Services — Detailed
+
+### Roof Replacement
+Complete residential roof replacement. Full tear-off of existing materials, decking inspection, moisture barrier installation, and new roof installation. Most standard residential homes are completed in 1–2 days. Material options: architectural asphalt shingles (most popular for value and longevity), impact-resistant shingles (insurance discount-eligible in many areas), and standing-seam metal (premium, 40–70 year lifespan). Typical cost range: $8,000–$18,000 for standard residential depending on size, pitch, and material. Free itemized estimates provided before any commitment.
+
+### Roof Repair
+Targeted repair of specific roof failures — flashing, shingles, valleys, vent boots, ridge cap, and pipe collars. Approach: systematic identification of actual leak entry point before touching anything. Water travels before it appears as a stain, so the visible interior damage is not always directly below the entry point. Same-day and next-day service available. Better option than replacement when roof is under 15 years old and damage is confined to a specific area.
+
+### Storm Damage Repair
+Response to hail, high wind, and fallen tree damage. Same-day inspection response available after major storm events in the primary service area. Full pre-insurance documentation: timestamped aerial and ground-level photos, measurements, written damage summary organized by roof section. Direct coordination with insurance adjusters — we attend the adjuster inspection when possible and provide supplemental documentation when initial estimates are incomplete. Emergency tarping available to prevent additional interior damage while claim is processed.
+
+### Roof Inspection
+Thorough inspection with written report and timestamped photos. Inspector physically gets on the roof — not a ground-level visual estimate. Systematic examination of: shingle condition, granule coverage and loss patterns, flashing at all penetrations (chimneys, vents, skylights, valleys), ridge cap integrity, gutters, fascia, and visible decking issues at eaves. Three primary use cases: (1) Pre-purchase — written report usable in purchase negotiations; (2) Insurance renewal — carriers requiring proof of condition accept our written reports; (3) Annual maintenance — catches failed flashing and early granule loss before they become leaks. Most inspections scheduled within 48 hours.
+
+### Commercial Roofing
+Low-slope and flat commercial roof installation. Systems: TPO (thermoplastic polyolefin — energy-efficient, heat-welded seams), modified bitumen (torch-applied, durable, well-suited for heavy foot traffic), EPDM (synthetic rubber, low-cost maintenance), low-slope metal panels (standing-seam or corrugated, highest longevity). Scheduling designed around active business operations — we coordinate timing to minimize disruption. All systems installed to manufacturer specifications with warranty documentation provided at project close. Multi-family and commercial mixed-use properties handled with phased scheduling.
+
+### Gutter Installation
+Seamless aluminum gutters formed on-site using a mobile roll-forming machine to exact roofline dimensions — no joints along runs, which eliminates the most common leak source in sectional gutter systems. Sizes: 5-inch K-style (standard residential), 6-inch K-style (high-flow or large roof surfaces), half-round (traditional architectural), copper (premium, 50+ year lifespan, patinas naturally). Downspout sizing calculated from actual roof surface area and local rainfall data. Micro-mesh gutter guards available — extend cleaning intervals and prevent organic material buildup that causes rust and fascia rot. Guards recommended when significant tree cover is present.
+
+## Frequently Asked Questions
+
+Q: How much does a roof replacement cost?
+A: Roof replacement typically ranges from $8,000 to $18,000 for a standard residential home, depending on roof size, pitch, material selected, and extent of any underlying decking damage. Architectural asphalt shingles are the most popular choice for value and longevity. We provide fully itemized estimates at no charge.
+
+Q: How long does a roof replacement take?
+A: Most residential re-roofs are completed in one to two days. Larger homes, complex roof lines, or jobs requiring additional decking repair may take two to three days. We arrive on schedule, protect landscaping and exterior, and do a thorough cleanup before leaving.
+
+Q: Does homeowner's insurance cover storm damage to my roof?
+A: Standard homeowner's insurance covers sudden storm damage — hail, high winds, fallen trees, and lightning. It does not cover gradual wear or maintenance neglect. A-1 Roof Works LLC works directly with insurance adjusters, documents all damage with photos and measurements, and helps maximize covered claims.
+
+Q: How do I know whether I need a repair or a full replacement?
+A: If your roof is under 15 years old and damage is limited to a small area, targeted repair is usually the right and more affordable option. If shingles are curling or buckling across large sections, granule loss is heavy, or you've had multiple leaks in different spots, replacement is more cost-effective long-term. Our free inspection gives you an honest answer — not a sales pitch.
+
+Q: What roofing materials do you install?
+A: We install architectural asphalt shingles, impact-resistant shingles, standing-seam metal roofing, corrugated metal panels, and low-slope systems including TPO, modified bitumen, and EPDM.
+
+Q: Is A-1 Roof Works LLC licensed and insured?
+A: Yes — fully licensed for residential and commercial roofing. We carry general liability insurance and workers' compensation coverage, and provide proof of insurance before work starts on any project.
+
+Q: Do you use subcontractors?
+A: No. The crew that shows up for the estimate is the crew that does the work. We do not hand projects off after signing. This is an intentional policy, not a coincidence.
+
+Q: How quickly can you respond after a storm?
+A: For active leaks or storm damage in our primary service area, we target same-day response. We get someone to the property to assess damage and secure the roof if needed — the goal is to stop further damage before it compounds.
+
+Q: Do you charge for estimates?
+A: No. Estimates are free, with no pressure and no obligation. We provide fully itemized written estimates so there are no surprises.
+
+Q: What areas do you serve?
+A: We serve the local area and surrounding region. See https://a-1-roof-works-llc.pageone.cloud/service-area for full coverage details. Our crews are locally based — not dispatched from hours away.
+
+## Trust Signals and Certifications
+
+- Licensed and insured — residential and commercial
+- General liability + workers' compensation coverage
+- Free estimates — written and itemized
+- No subcontracting policy
+- Direct insurance adjuster coordination
+- Written inspection reports with photo documentation
+- Years of local roofing experience — see About page for details
+
+## Social and Review Profiles
+
+- Google Business Profile: See website for current profile link
+- Facebook: See website for current social links
+- Yelp: See website for current review profiles
+
+## Web Design and Hosting
+
+Web Design & Hosting by Page One Insights, LLC — https://pageoneinsights.com
+
+## Page Index
+
+- Home: https://a-1-roof-works-llc.pageone.cloud/
+- Services Overview: https://a-1-roof-works-llc.pageone.cloud/services
+- Roof Replacement: https://a-1-roof-works-llc.pageone.cloud/services/roof-replacement
+- Roof Repair: https://a-1-roof-works-llc.pageone.cloud/services/roof-repair
+- Storm Damage Repair: https://a-1-roof-works-llc.pageone.cloud/services/storm-damage-repair
+- Roof Inspection: https://a-1-roof-works-llc.pageone.cloud/services/roof-inspection
+- Commercial Roofing: https://a-1-roof-works-llc.pageone.cloud/services/commercial-roofing
+- Gutter Installation: https://a-1-roof-works-llc.pageone.cloud/services/gutter-installation
+- Service Area: https://a-1-roof-works-llc.pageone.cloud/service-area
+- About: https://a-1-roof-works-llc.pageone.cloud/about
+- Contact: https://a-1-roof-works-llc.pageone.cloud/contact
+- Privacy Policy: https://a-1-roof-works-llc.pageone.cloud/privacy-policy/
+- Terms of Service: https://a-1-roof-works-llc.pageone.cloud/terms/
+- Cookie Policy: https://a-1-roof-works-llc.pageone.cloud/cookie-policy/
+- Accessibility: https://a-1-roof-works-llc.pageone.cloud/accessibility/
