@@ -18,7 +18,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/config.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/functions.php';
 
-// NAP footer phone ← set $phone in config.php (example format: (555) 555-0100)
+// NAP footer phone ← set $phone in config.php
 
 /* Split services array for two-column layout in footer */
 $serviceCount   = !empty($services) ? count($services) : 0;

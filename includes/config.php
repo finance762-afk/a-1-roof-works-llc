@@ -88,7 +88,7 @@ $socialLinks = [
 ];
 
 // ─── Analytics / Verification ──────────────────────────────────────────────
-$ga4MeasurementId = '';   // [OPTIONAL] e.g. G-XXXXXXXXXX
+$ga4MeasurementId = '';   // [OPTIONAL] Google Analytics 4 Measurement ID
 $gscVerification  = '';   // [OPTIONAL] Google Search Console meta content value
 
 // ─── Business Details ──────────────────────────────────────────────────────

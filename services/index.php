@@ -533,10 +533,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       <p class="last-updated-line">Last Updated: April 2026</p>
     </div>
 
-    <div class="svc-grid">
+    <div class="svc-grid services-grid">
       <?php foreach ($allServices as $svc): ?>
       <a href="/services/<?php echo htmlspecialchars($svc['slug'], ENT_QUOTES, 'UTF-8'); ?>"
-         class="svc-card"
+         class="svc-card service-card-with-image"
          data-animate="fade-up"
          aria-label="<?php echo htmlspecialchars($svc['name'], ENT_QUOTES, 'UTF-8'); ?> — Learn More">
         <div class="svc-card-icon" aria-hidden="true">

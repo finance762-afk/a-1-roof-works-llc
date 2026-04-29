@@ -1261,20 +1261,20 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 }
 
 /* ─── 12. Standard service card — photo variant ──────────────────────────── */
-.service-card-image {
+.service-card-with-image {
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   overflow: hidden;
   aspect-ratio: 16 / 9;
   flex-shrink: 0;
 }
-.service-card-image img {
+.service-card-with-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
 }
-.service-card:hover .service-card-image img { transform: scale(1.06); }
+.service-card:hover .service-card-with-image img { transform: scale(1.06); }
 .service-card-content {
   padding: var(--space-lg);
   display: flex;
@@ -1283,7 +1283,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   flex: 1;
 }
 /* When a card has a photo, zero out base padding so image bleeds to edges */
-.service-card:has(.service-card-image) { padding: 0; gap: 0; overflow: hidden; }
+.service-card:has(.service-card-with-image) { padding: 0; gap: 0; overflow: hidden; }
 
 /* ─── Responsive — tablet ─────────────────────────────────────────────────── */
 @media (max-width: 1023px) {
@@ -1587,7 +1587,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         <div class="featured-card-img-wrap" aria-hidden="true">
           <img
             src="/assets/images/photo-021.jpg"
-            alt=""
+            alt="Completed residential roof replacement with new architectural shingles installed on a two-story home"
             width="600"
             height="180"
             loading="lazy">
@@ -1615,7 +1615,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 
       <!-- Standard cards -->
       <article class="service-card" data-animate="fade-up" style="animation-delay:80ms">
-        <div class="service-card-image">
+        <div class="service-card-with-image">
           <img src="/assets/images/photo-001.jpg" alt="Close-up aerial view of gray asphalt shingles with metal roof flashing and gutters, showing roofing material detail and installation" width="400" height="225" loading="lazy">
         </div>
         <div class="service-card-content">
@@ -1629,7 +1629,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       </article>
 
       <article class="service-card" data-animate="fade-up" style="animation-delay:160ms">
-        <div class="service-card-image">
+        <div class="service-card-with-image">
           <img src="/assets/images/photo-008.jpg" alt="Residential roof repair in progress with shingles removed and work truck parked on driveway" width="400" height="225" loading="lazy">
         </div>
         <div class="service-card-content">
@@ -1643,7 +1643,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       </article>
 
       <article class="service-card" data-animate="fade-up" style="animation-delay:240ms">
-        <div class="service-card-image">
+        <div class="service-card-with-image">
           <img src="/assets/images/photo-046.jpg" alt="Professional roof inspection of residential asphalt shingle with vent pipe detail and barcode tag" width="400" height="225" loading="lazy">
         </div>
         <div class="service-card-content">
@@ -1657,7 +1657,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       </article>
 
       <article class="service-card" data-animate="fade-up" style="animation-delay:320ms">
-        <div class="service-card-image">
+        <div class="service-card-with-image">
           <img src="/assets/images/photo-002.jpg" alt="Newly installed asphalt shingle roof with gray dimensional shingles and white PVC pipe penetration" width="400" height="225" loading="lazy">
         </div>
         <div class="service-card-content">
@@ -1671,7 +1671,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       </article>
 
       <article class="service-card" data-animate="fade-up" style="animation-delay:400ms">
-        <div class="service-card-image">
+        <div class="service-card-with-image">
           <img src="/assets/images/photo-057.jpg" alt="Residential roof repair in progress showing asphalt shingles, gutters, and protective mesh netting installation" width="400" height="225" loading="lazy">
         </div>
         <div class="service-card-content">
