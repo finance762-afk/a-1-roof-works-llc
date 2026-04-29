@@ -100,6 +100,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 ═══════════════════════════════════════════════════════════════════════════ -->
 <style>
 
+/* ─── Card tint variables & utilities ────────────────────────────────────── */
+:root {
+  --color-card-tint-1: rgba(var(--color-primary-rgb), 0.08);
+  --color-card-tint-2: rgba(var(--color-primary-dark-rgb), 0.06);
+  --color-card-tint-3: rgba(var(--color-accent-rgb), 0.09);
+}
+.card-tint-1 { background: var(--color-card-tint-1); }
+.card-tint-2 { background: var(--color-card-tint-2); }
+.card-tint-3 { background: var(--color-card-tint-3); }
+
 /* ─── 0. Shared page utilities ────────────────────────────────────────────── */
 .page-home .section-eyebrow {
   display: inline-flex;
@@ -609,24 +619,24 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   transform: translateY(-2px);
   box-shadow: 0 5px 0 rgba(0,0,0,0.18);
 }
-/* Standard service cards */
-.service-card {
+/* Standard service cards — image-on-top pattern */
+.service-card-with-image {
   background: var(--color-bg);
   border-radius: var(--radius-lg);
-  padding: var(--space-xl);
+  padding: 0;
   box-shadow: var(--shadow-card);
   border-top: 3px solid transparent;
   transition: all var(--transition-base);
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  overflow: hidden;
 }
-.service-card:hover {
+.service-card-with-image:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
   border-top-color: var(--color-accent);
 }
-.service-card-icon {
+.service-card__icon {
   width: 48px; height: 48px;
   background: rgba(var(--color-primary-rgb), 0.07);
   border-radius: var(--radius-md);
@@ -635,16 +645,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   justify-content: center;
   transition: background var(--transition-fast);
 }
-.service-card:hover .service-card-icon {
+.service-card-with-image:hover .service-card__icon {
   background: rgba(var(--color-accent-rgb), 0.12);
 }
-.service-card-icon [data-lucide] {
+.service-card__icon [data-lucide] {
   width: 22px; height: 22px;
   color: var(--color-primary);
   transition: color var(--transition-fast);
 }
-.service-card:hover .service-card-icon [data-lucide] { color: var(--color-accent); }
-.service-card h3 {
+.service-card-with-image:hover .service-card__icon [data-lucide] { color: var(--color-accent); }
+.service-card-with-image h3 {
   font-size: clamp(1rem, 2vw, 1.15rem);
   font-weight: 700;
   line-height: 1.25;
@@ -653,14 +663,36 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   color: var(--color-primary);
   margin: 0;
 }
-.service-card p {
+.service-card-with-image p {
   font-size: 0.88rem;
   color: var(--color-text-light);
   line-height: 1.6;
-  flex: 1;
   margin: 0;
 }
-.service-card .card-link {
+.service-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+.service-card__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  line-height: 1.45;
+}
+.service-card__list li [data-lucide] {
+  width: 13px; height: 13px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.service-card-with-image .service-card__cta {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
@@ -672,12 +704,12 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
   color: var(--color-primary);
   transition: color var(--transition-fast), gap var(--transition-fast);
 }
-.service-card .card-link [data-lucide] {
+.service-card-with-image .service-card__cta [data-lucide] {
   width: 14px; height: 14px;
   transition: transform var(--transition-fast);
 }
-.service-card:hover .card-link { color: var(--color-accent); gap: var(--space-sm); }
-.service-card:hover .card-link [data-lucide] { transform: translateX(3px); }
+.service-card-with-image:hover .service-card__cta { color: var(--color-accent); gap: var(--space-sm); }
+.service-card-with-image:hover .service-card__cta [data-lucide] { transform: translateX(3px); }
 /* View all button */
 .services-cta { text-align: center; }
 .btn-secondary-outline {
@@ -1261,29 +1293,27 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 }
 
 /* ─── 12. Standard service card — photo variant ──────────────────────────── */
-.service-card-with-image {
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+.service-card__image {
+  border-radius: 0;
   overflow: hidden;
   aspect-ratio: 16 / 9;
   flex-shrink: 0;
 }
-.service-card-with-image img {
+.service-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
 }
-.service-card:hover .service-card-with-image img { transform: scale(1.06); }
-.service-card-content {
+.service-card-with-image:hover .service-card__image img { transform: scale(1.06); }
+.service-card__body {
   padding: var(--space-lg);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
   flex: 1;
 }
-/* When a card has a photo, zero out base padding so image bleeds to edges */
-.service-card:has(.service-card-with-image) { padding: 0; gap: 0; overflow: hidden; }
 
 /* ─── Responsive — tablet ─────────────────────────────────────────────────── */
 @media (max-width: 1023px) {
@@ -1566,16 +1596,22 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
         </a>
       </article>
 
-      <?php foreach (array_slice($remainingSvcs, 0, 6) as $i => $svc): ?>
-      <article class="service-card" data-animate="fade-up" style="animation-delay:<?php echo (($i+1)*80); ?>ms">
-        <div class="service-card-icon">
-          <i data-lucide="layers" aria-hidden="true"></i>
+      <?php
+      $tintCycle = ['card-tint-1', 'card-tint-2', 'card-tint-3'];
+      foreach (array_slice($remainingSvcs, 0, 6) as $i => $svc):
+        $tintClass = $tintCycle[$i % 3];
+      ?>
+      <article class="service-card-with-image <?php echo $tintClass; ?>" data-animate="fade-up" style="animation-delay:<?php echo (($i+1)*80); ?>ms">
+        <div class="service-card__body">
+          <div class="service-card__icon">
+            <i data-lucide="layers" aria-hidden="true"></i>
+          </div>
+          <h3><?php echo htmlspecialchars($svc['name'], ENT_QUOTES, 'UTF-8'); ?></h3>
+          <p><?php echo htmlspecialchars(substr($svc['description'] ?? '', 0, 130), ENT_QUOTES, 'UTF-8'); ?><?php echo strlen($svc['description'] ?? '') > 130 ? '…' : ''; ?></p>
+          <a href="/services/<?php echo getServiceSlug($svc['name']); ?>" class="service-card__cta">
+            Learn More <i data-lucide="arrow-right" aria-hidden="true"></i>
+          </a>
         </div>
-        <h3><?php echo htmlspecialchars($svc['name'], ENT_QUOTES, 'UTF-8'); ?></h3>
-        <p><?php echo htmlspecialchars(substr($svc['description'] ?? '', 0, 130), ENT_QUOTES, 'UTF-8'); ?><?php echo strlen($svc['description'] ?? '') > 130 ? '…' : ''; ?></p>
-        <a href="/services/<?php echo getServiceSlug($svc['name']); ?>" class="card-link">
-          Learn More <i data-lucide="arrow-right" aria-hidden="true"></i>
-        </a>
       </article>
       <?php endforeach; ?>
 
@@ -1614,73 +1650,98 @@ include $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
       </article>
 
       <!-- Standard cards -->
-      <article class="service-card" data-animate="fade-up" style="animation-delay:80ms">
-        <div class="service-card-with-image">
+      <article class="service-card-with-image card-tint-1" data-animate="fade-up" style="animation-delay:80ms">
+        <div class="service-card__image">
           <img src="/assets/images/photo-001.jpg" alt="Close-up aerial view of gray asphalt shingles with metal roof flashing and gutters, showing roofing material detail and installation" width="400" height="225" loading="lazy">
         </div>
-        <div class="service-card-content">
-          <div class="service-card-icon">
+        <div class="service-card__body">
+          <div class="service-card__icon">
             <i data-lucide="wrench" aria-hidden="true"></i>
           </div>
           <h3>Roof Repair</h3>
-          <p>Leaks, missing shingles, cracked flashing — targeted repairs that fix the actual problem, not just the symptom. We find the source, seal it properly, and document the work.</p>
-          <a href="/services/roof-repair" class="card-link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          <p>Leaks, missing shingles, cracked flashing — targeted repairs that fix the actual problem, not just the symptom.</p>
+          <ul class="service-card__list">
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Same-day leak assessment</li>
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Source found, not patched over</li>
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Written report with photos</li>
+          </ul>
+          <a href="/services/roof-repair" class="service-card__cta">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
       </article>
 
-      <article class="service-card" data-animate="fade-up" style="animation-delay:160ms">
-        <div class="service-card-with-image">
+      <article class="service-card-with-image card-tint-2" data-animate="fade-up" style="animation-delay:160ms">
+        <div class="service-card__image">
           <img src="/assets/images/photo-008.jpg" alt="Residential roof repair in progress with shingles removed and work truck parked on driveway" width="400" height="225" loading="lazy">
         </div>
-        <div class="service-card-content">
-          <div class="service-card-icon">
+        <div class="service-card__body">
+          <div class="service-card__icon">
             <i data-lucide="cloud-lightning" aria-hidden="true"></i>
           </div>
           <h3>Storm Damage Repair</h3>
-          <p>Hail, high winds, and fallen branches leave damage that worsens fast. We inspect same-day after major storms, document everything for your insurance adjuster, and get your roof sealed.</p>
-          <a href="/services/storm-damage-repair" class="card-link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          <p>Hail, high winds, and fallen branches leave damage that worsens fast. We inspect same-day and get your roof sealed.</p>
+          <ul class="service-card__list">
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Same-day storm inspections</li>
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Full insurance documentation</li>
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Emergency tarping available</li>
+          </ul>
+          <a href="/services/storm-damage-repair" class="service-card__cta">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
       </article>
 
-      <article class="service-card" data-animate="fade-up" style="animation-delay:240ms">
-        <div class="service-card-with-image">
+      <article class="service-card-with-image card-tint-3" data-animate="fade-up" style="animation-delay:240ms">
+        <div class="service-card__image">
           <img src="/assets/images/photo-046.jpg" alt="Professional roof inspection of residential asphalt shingle with vent pipe detail and barcode tag" width="400" height="225" loading="lazy">
         </div>
-        <div class="service-card-content">
-          <div class="service-card-icon">
+        <div class="service-card__body">
+          <div class="service-card__icon">
             <i data-lucide="search" aria-hidden="true"></i>
           </div>
           <h3>Roof Inspection</h3>
-          <p>Buying a home, renewing insurance, or just overdue for a checkup? We provide detailed written inspections with photos — everything you need to make an informed decision.</p>
-          <a href="/services/roof-inspection" class="card-link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          <p>Buying a home, renewing insurance, or just overdue for a checkup? Detailed written inspections with photos delivered same day.</p>
+          <ul class="service-card__list">
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Insurance &amp; pre-purchase ready</li>
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Written report with photos</li>
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Results delivered same day</li>
+          </ul>
+          <a href="/services/roof-inspection" class="service-card__cta">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
       </article>
 
-      <article class="service-card" data-animate="fade-up" style="animation-delay:320ms">
-        <div class="service-card-with-image">
+      <article class="service-card-with-image card-tint-1" data-animate="fade-up" style="animation-delay:320ms">
+        <div class="service-card__image">
           <img src="/assets/images/photo-002.jpg" alt="Newly installed asphalt shingle roof with gray dimensional shingles and white PVC pipe penetration" width="400" height="225" loading="lazy">
         </div>
-        <div class="service-card-content">
-          <div class="service-card-icon">
+        <div class="service-card__body">
+          <div class="service-card__icon">
             <i data-lucide="building-2" aria-hidden="true"></i>
           </div>
           <h3>Commercial Roofing</h3>
-          <p>TPO, modified bitumen, and low-slope systems for commercial and multi-family properties. We work around your business hours and meet commercial warranty requirements.</p>
-          <a href="/services/commercial-roofing" class="card-link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          <p>TPO, modified bitumen, and low-slope systems for commercial and multi-family properties — scheduled around your business hours.</p>
+          <ul class="service-card__list">
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> TPO, EPDM &amp; modified bitumen</li>
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Scheduled around business hours</li>
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Meets commercial warranty standards</li>
+          </ul>
+          <a href="/services/commercial-roofing" class="service-card__cta">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
       </article>
 
-      <article class="service-card" data-animate="fade-up" style="animation-delay:400ms">
-        <div class="service-card-with-image">
+      <article class="service-card-with-image card-tint-2" data-animate="fade-up" style="animation-delay:400ms">
+        <div class="service-card__image">
           <img src="/assets/images/photo-057.jpg" alt="Residential roof repair in progress showing asphalt shingles, gutters, and protective mesh netting installation" width="400" height="225" loading="lazy">
         </div>
-        <div class="service-card-content">
-          <div class="service-card-icon">
+        <div class="service-card__body">
+          <div class="service-card__icon">
             <i data-lucide="droplets" aria-hidden="true"></i>
           </div>
           <h3>Gutter Installation</h3>
-          <p>Seamless gutters and downspout systems that protect your foundation, fascia, and landscaping. Matched to your home's roofline for a clean, integrated look.</p>
-          <a href="/services/gutter-installation" class="card-link">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          <p>Seamless gutters and downspout systems that protect your foundation, fascia, and landscaping, matched to your home's roofline.</p>
+          <ul class="service-card__list">
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Seamless aluminum &amp; steel options</li>
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Custom-matched to your roofline</li>
+            <li><i data-lucide="check-circle" aria-hidden="true"></i> Downspout placement included</li>
+          </ul>
+          <a href="/services/gutter-installation" class="service-card__cta">Learn More <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
       </article>
 
