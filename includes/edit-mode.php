@@ -20,29 +20,40 @@ if (!empty($_GET['edit']) && $__p1_isPreview):
     // Page file relative to docroot, matching the /content extractor's keys.
     $__p1_pageFile = ltrim($_SERVER['SCRIPT_NAME'] ?? '', '/');
 
-    // Config scalars / NAP that are interpolated at render time — their rendered
-    // value won't match the source, and NAP must never be inline-editable. The
-    // inject script skips any element whose text contains one of these.
-    $__p1_dyn = [];
+    // Config scalars / NAP interpolated at render time. Two tiers:
+    //   HARD — sensitive identifiers (phone/email/license/street/zip). A bare
+    //          atom (the whole element is essentially this value, label+punct
+    //          aside) must never be inline-editable.
+    //   SOFT — brand/place mentions (name/tagline/owner/domain/city/state).
+    //          Locked ONLY when the element's text IS exactly this value;
+    //          ordinary prose that merely mentions the brand or city stays
+    //          editable. The server's PHP/script mask is the backstop for any
+    //          interpolated value that slips through.
+    $__p1_norm = function ($v) { return (is_string($v) && trim($v) !== '') ? trim($v) : null; };
+    $__p1_hard = [];
     foreach ([
-        $siteName ?? null, $tagline ?? null, $ownerName ?? null,
         $phone ?? null, $phoneSecondary ?? null,
         $email ?? null, $contactEmail ?? null,
-        $licenseNumber ?? null, $domain ?? null,
-        ($address['street'] ?? null), ($address['city'] ?? null),
-        ($address['state'] ?? null), ($address['zip'] ?? null),
-    ] as $__v) {
-        if (is_string($__v) && trim($__v) !== '') $__p1_dyn[] = trim($__v);
-    }
-    $__p1_dyn = array_values(array_unique($__p1_dyn));
+        $licenseNumber ?? null,
+        ($address['street'] ?? null), ($address['zip'] ?? null),
+    ] as $__v) { if ($__n = $__p1_norm($__v)) $__p1_hard[] = $__n; }
+    $__p1_soft = [];
+    foreach ([
+        $siteName ?? null, $tagline ?? null, $ownerName ?? null, $domain ?? null,
+        ($address['city'] ?? null), ($address['state'] ?? null),
+    ] as $__v) { if ($__n = $__p1_norm($__v)) $__p1_soft[] = $__n; }
+    $__p1_hard = array_values(array_unique($__p1_hard));
+    $__p1_soft = array_values(array_unique($__p1_soft));
 ?>
 <script>
 (function () {
   "use strict";
   var PAGE_FILE = <?php echo json_encode($__p1_pageFile); ?>;
-  // Only values >= 4 chars are used for "contains" skips, to avoid over-skipping
-  // on short tokens (state codes, small numbers).
-  var DYN = (<?php echo json_encode($__p1_dyn); ?> || []).filter(function (v) { return v && v.length >= 4; });
+  // Only values >= 4 chars participate, to avoid over-locking on short tokens
+  // (state codes, small numbers).
+  function atLeast4(v) { return v && v.length >= 4; }
+  var HARD = (<?php echo json_encode($__p1_hard); ?> || []).filter(atLeast4);
+  var SOFT = (<?php echo json_encode($__p1_soft); ?> || []).filter(atLeast4);
 
   var SELECTOR = "h1,h2,h3,h4,h5,h6,p,li,blockquote,figcaption,span,em,strong";
   // Ancestors that make an element off-limits: structure, links, CTAs, forms.
@@ -52,8 +63,18 @@ if (!empty($_GET['edit']) && $__p1_isPreview):
     for (var n = el.firstChild; n; n = n.nextSibling) if (n.nodeType === 1) return true;
     return false;
   }
-  function containsDynamic(text) {
-    for (var i = 0; i < DYN.length; i++) if (text.indexOf(DYN[i]) !== -1) return true;
+  function nonSpaceLen(s) { return s.replace(/\s+/g, "").length; }
+  // Lock an element only when its text IS a dynamic value, not when prose merely
+  // mentions one. SOFT (brand/place): exact standalone match. HARD (NAP): also
+  // locked when the atom DOMINATES the text (>=60% of non-space chars), i.e. a
+  // bare phone/email/license/address dressed in only a label or punctuation.
+  function isLockedNap(text) {
+    for (var i = 0; i < SOFT.length; i++) if (text === SOFT[i]) return true;
+    for (var j = 0; j < HARD.length; j++) {
+      if (text === HARD[j]) return true;
+      if (text.indexOf(HARD[j]) !== -1 &&
+          nonSpaceLen(HARD[j]) / Math.max(1, nonSpaceLen(text)) >= 0.6) return true;
+    }
     return false;
   }
   function isEditable(el) {
@@ -61,7 +82,7 @@ if (!empty($_GET['edit']) && $__p1_isPreview):
     if (hasElementChild(el)) return false;          // leaf text only (no inner markup)
     var t = (el.innerText || "").replace(/\s+/g, " ").trim();
     if (t.length < 2) return false;
-    if (containsDynamic(t)) return false;           // NAP / config-interpolated text
+    if (isLockedNap(t)) return false;               // standalone NAP / bare atom
     return true;
   }
 
@@ -87,35 +108,59 @@ if (!empty($_GET['edit']) && $__p1_isPreview):
     return count;
   }
 
+  // Inline markup the user may add via Ctrl+B / Ctrl+I / Enter. The server
+  // re-sanitizes to exactly this subset and drops everything else, so this is a
+  // hint, not a trust boundary.
+  var ALLOWED_MARKUP = /<(?:br|em|strong|i|b)\b/i;
+  function collapseWs(s) { return s.replace(/\s+/g, " "); }
+
   function onPaste(e) {
     e.preventDefault();
     var t = (e.clipboardData || window.clipboardData).getData("text/plain");
-    document.execCommand("insertText", false, t.replace(/\s+/g, " "));
+    document.execCommand("insertText", false, collapseWs(t));
+  }
+  function onKeydown(e) {
+    // Enter inserts a line break, not a block element, so markup stays inline.
+    if (e.key === "Enter") {
+      e.preventDefault();
+      document.execCommand("insertHTML", false, "<br>");
+    }
   }
   function onBlur(e) {
     var el = e.target;
     var orig = el.__p1_orig;
-    var next = (el.innerText || "").replace(/\s+/g, " ").trim();
-    // Keep DOM clean of any stray markup the browser may have introduced.
-    if (el.innerText !== next) el.textContent = next;
-    if (!next || next === orig) return;
-    try {
-      window.parent.postMessage({
-        source: "p1-inline-editor",
-        action: "edit",
-        pageFile: PAGE_FILE,
-        text: orig,                       // original source text (match target)
-        newText: next,                    // plain text replacement
-        occurrenceIndex: occurrenceIndex(el, orig),
-      }, "*");
-    } catch (err) {}
+    var plain = collapseWs(el.innerText || "").trim();
+    var hasMarkup = ALLOWED_MARKUP.test(el.innerHTML);
+    var hadMarkup = el.__p1_hadMarkup;
+    el.__p1_hadMarkup = hasMarkup;
+    if (!hasMarkup) {
+      // Plain edit — strip any stray nodes the browser slipped in.
+      if (el.innerText !== plain) el.textContent = plain;
+    }
+    if (!plain) return;                              // emptied — ignore
+    if (!hasMarkup && !hadMarkup && plain === orig) return; // genuine no-op
+    var msg = {
+      source: "p1-inline-editor",
+      action: "edit",
+      pageFile: PAGE_FILE,
+      text: orig,                       // original source text (match target)
+      newText: plain,                   // plain text (fallback + revert signal)
+      occurrenceIndex: occurrenceIndex(el, orig),
+    };
+    // Only carry markup when present; the server sanitizes it before write.
+    if (hasMarkup) msg.html = collapseWs(el.innerHTML).trim();
+    try { window.parent.postMessage(msg, "*"); } catch (err) {}
   }
 
   function mark(el) {
     el.__p1_orig = (el.innerText || "").replace(/\s+/g, " ").trim();
+    el.__p1_hadMarkup = false;
     el.setAttribute("data-p1-editable", "1");
-    try { el.contentEditable = "plaintext-only"; } catch (e) { el.contentEditable = "true"; }
-    if (el.contentEditable !== "plaintext-only") el.addEventListener("paste", onPaste);
+    // Rich (not plaintext-only) so Ctrl+B / Ctrl+I produce inline markup; paste
+    // and Enter are tamed so only the allowed subset can appear.
+    el.contentEditable = "true";
+    el.addEventListener("paste", onPaste);
+    el.addEventListener("keydown", onKeydown);
     el.addEventListener("blur", onBlur);
     el.spellcheck = false;
     editables.push(el);
@@ -136,7 +181,7 @@ if (!empty($_GET['edit']) && $__p1_isPreview):
 
     var badge = document.createElement("div");
     badge.id = "p1-edit-badge";
-    badge.textContent = "Edit mode — click prose to edit";
+    badge.textContent = "Edit mode — click prose to edit · Ctrl+B / Ctrl+I · Enter = line break";
     document.body.appendChild(badge);
 
     try {
