@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/site-config.php';
 /**
  * head.php — Document <head> for A-1 Roof Works LLC
  *
@@ -218,5 +219,6 @@ if (!empty($sameAs)) {
   </script>
 <?php endif; ?>
 
+<?php require_once __DIR__ . '/edit-mode.php'; ?>
 </head>
 <body class="page-<?php echo htmlspecialchars(isset($currentPage) ? $currentPage : 'default', ENT_QUOTES, 'UTF-8'); ?>">
