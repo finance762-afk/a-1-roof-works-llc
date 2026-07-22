@@ -129,3 +129,4 @@ $googleBusinessProfileUrl = '';   // [OPTIONAL]
 // ─── Lead Notification ─────────────────────────────────────────────────────
 $leadNotificationEmail = '';   // [OPTIONAL] where new leads are forwarded
 $leadNotificationPhone = '';   // [OPTIONAL]
+$leadsFormSecret = 'bac7714a8f41505ab12d75311ccbb11a6374e38b1a010d69111c84a652cfa0f3'; // spam-shield HMAC (matches leads fn LEADS_FORM_SECRET)
